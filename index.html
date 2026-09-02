@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Setiawan Joddy — Portfolio</title>
+<title>Setiawan Joddy — AI Researcher & Product Manager</title>
+<meta name="description" content="Assistant Professor at BINUS University. AI Researcher specializing in Stock Market Forecasting, Malware Detection, and Few-Shot Learning. Former Apple Developer Academy scholar.">
+<meta property="og:title" content="Setiawan Joddy — AI Researcher & Product Manager">
+<meta property="og:description" content="Assistant Professor @ BINUS University. AI Researcher. Apple Developer Academy 2020.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://setiawanjoddy.github.io">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,7 +18,7 @@
   --bg:#0F172A;--fg:#F8FAFC;--card:#1B2336;--card-fg:#F8FAFC;
   --primary:#1E293B;--secondary:#334155;--accent:#22C55E;--accent-fg:#0F172A;
   --muted:#272F42;--muted-fg:#94A3B8;--border:#475569;
-  --ring:#FFFFFF;--destructive:#EF4444;
+  --ring:#FFFFFF;--destructive:#EF4444;--gold:#F59E0B;
 }
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -24,12 +29,22 @@ a:focus-visible{outline:2px solid var(--ring);outline-offset:2px;border-radius:2
 .container{max-width:960px;margin:0 auto;padding:3rem 1.5rem}
 
 /* Hero */
-.hero{margin-bottom:4rem}
-.hero h1{font-family:'JetBrains Mono',monospace;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem}
-.hero .tagline{color:var(--muted-fg);font-size:1.125rem;margin-bottom:1.5rem}
-.hero .links{display:flex;gap:1rem;flex-wrap:wrap}
-.hero .links a{font-family:'JetBrains Mono',monospace;font-size:.875rem;padding:.5rem 1rem;border:1px solid var(--border);border-radius:6px;color:var(--muted-fg);transition:border-color .15s,color .15s}
+.hero{margin-bottom:4rem;display:flex;flex-direction:column;gap:1.5rem}
+.hero-top{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.avatar{width:120px;height:120px;border-radius:50%;background:var(--card);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:var(--accent);font-family:'JetBrains Mono',monospace;flex-shrink:0}
+.hero-info{flex:1;min-width:200px}
+.hero h1{font-family:'JetBrains Mono',monospace;font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.25rem}
+.hero .tagline{color:var(--muted-fg);font-size:1rem;margin-bottom:.5rem}
+.hero .bio{color:var(--muted-fg);font-size:.9375rem;line-height:1.6;max-width:600px}
+.hero .links{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem}
+.hero .links a{font-family:'JetBrains Mono',monospace;font-size:.8125rem;padding:.4rem .875rem;border:1px solid var(--border);border-radius:6px;color:var(--muted-fg);transition:border-color .15s,color .15s}
 .hero .links a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Stats */
+.stats{display:flex;gap:2rem;flex-wrap:wrap;margin-top:.5rem}
+.stat{text-align:center}
+.stat-num{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;color:var(--accent)}
+.stat-label{font-size:.75rem;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.05em}
 
 /* Section */
 section{margin-bottom:3.5rem}
@@ -42,19 +57,33 @@ section h2{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:600
 .card-meta{color:var(--muted-fg);font-size:.875rem}
 .card ul{padding-left:1.25rem;margin-top:.5rem;color:var(--muted-fg);font-size:.9375rem}
 .card li{margin-bottom:.2rem}
+.card .tag{display:inline-block;background:var(--muted);color:var(--muted-fg);font-size:.75rem;padding:.15rem .5rem;border-radius:4px;margin-right:.375rem;margin-top:.5rem;font-family:'JetBrains Mono',monospace}
 
 /* Skills */
 .skills-grid{display:flex;flex-wrap:wrap;gap:.5rem}
 .skill{background:var(--muted);color:var(--fg);padding:.375rem .875rem;border-radius:999px;font-size:.8125rem;font-family:'JetBrains Mono',monospace;border:1px solid var(--border)}
 
 /* Projects */
-.project-link{display:flex;align-items:center;gap:.5rem;padding:1rem 1.25rem;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;transition:border-color .15s}
+.project-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;transition:border-color .15s}
 .project-link:hover{border-color:var(--accent)}
 .project-link .arrow{color:var(--accent);font-size:1.25rem;transition:transform .15s}
 .project-link:hover .arrow{transform:translateX(4px)}
 .project-info{flex:1}
 .project-name{font-weight:600}
 .project-desc{color:var(--muted-fg);font-size:.875rem}
+.project-tags{margin-top:.375rem}
+.project-tag{display:inline-block;background:var(--muted);color:var(--muted-fg);font-size:.6875rem;padding:.1rem .4rem;border-radius:3px;margin-right:.25rem;font-family:'JetBrains Mono',monospace}
+
+/* Teaching */
+.teaching-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.75rem}
+.teaching-item{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:.875rem 1rem;font-size:.875rem}
+.teaching-item .course{font-weight:500}
+.teaching-item .lang{color:var(--muted-fg);font-size:.75rem;font-family:'JetBrains Mono',monospace}
+
+/* Testimonial */
+.testimonial{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:1.5rem;margin-bottom:1rem}
+.testimonial blockquote{font-style:italic;color:var(--muted-fg);font-size:.9375rem;line-height:1.7;margin-bottom:.75rem}
+.testimonial cite{font-style:normal;font-size:.8125rem;color:var(--accent)}
 
 /* Footer */
 footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);color:var(--muted-fg);font-size:.8125rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
@@ -62,8 +91,11 @@ footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);col
 /* Responsive */
 @media(max-width:640px){
   .container{padding:2rem 1rem}
-  .hero h1{font-size:1.75rem}
+  .hero-top{flex-direction:column;align-items:flex-start;gap:1rem}
+  .avatar{width:80px;height:80px;font-size:1.75rem}
+  .stats{gap:1.25rem}
   .card{padding:1rem}
+  .teaching-grid{grid-template-columns:1fr}
   footer{flex-direction:column}
 }
 </style>
@@ -73,12 +105,24 @@ footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);col
 <div class="container">
 
 <header class="hero">
-  <h1>Setiawan Joddy</h1>
-  <p class="tagline">Assistant Professor @ BINUS University · AI Researcher · Product Management</p>
-  <div class="links">
-    <a href="https://linkedin.com/in/setiawanjoddy" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/setiawanjoddy" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://scholar.google.com/citations?user=PbCs3nkAAAAJ" target="_blank" rel="noopener">Scholar</a>
+  <div class="hero-top">
+    <div class="avatar" aria-hidden="true">SJ</div>
+    <div class="hero-info">
+      <h1>Setiawan Joddy</h1>
+      <p class="tagline">Assistant Professor @ BINUS University · AI Researcher · Product Management</p>
+      <div class="links">
+        <a href="https://linkedin.com/in/setiawanjoddy" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/setiawanjoddy" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=PbCs3nkAAAAJ" target="_blank" rel="noopener">Scholar</a>
+      </div>
+    </div>
+  </div>
+  <p class="bio">AI researcher focused on Stock Market Forecasting, Malware Detection, and Few-Shot Learning. Former Apple Developer Academy scholar who shipped 5+ iOS apps to the App Store. Passionate about bridging research and real-world products.</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">13</div><div class="stat-label">Publications</div></div>
+    <div class="stat"><div class="stat-num">17</div><div class="stat-label">Citations</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">iOS Apps</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Years Exp</div></div>
   </div>
 </header>
 
@@ -91,6 +135,10 @@ footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);col
   <div class="card">
     <div class="card-title">Lecturer Specialist — School of Computer Science</div>
     <div class="card-meta">BINUS University</div>
+    <ul>
+      <li>Teaching 10 courses including AI, Software Engineering, UI/UX Design</li>
+      <li>Research supervision and paper development</li>
+    </ul>
   </div>
   <div class="card">
     <div class="card-title">Associate Product Manager</div>
@@ -100,13 +148,64 @@ footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);col
     <div class="card-title">Product Manager & iOS Developer</div>
     <div class="card-meta">Apple Developer Academy @BINUS · 2020</div>
     <ul>
-      <li>Developed 5+ iOS apps</li>
-      <li>Research, UI/UX Design, Agile/Scrum</li>
+      <li>Shipped 5+ iOS apps to App Store including Joey: Self-Care Buddy (AR emotion detection)</li>
+      <li>Led cross-functional teams using Scrum methodology</li>
+      <li>Conducted user research and expert interviews</li>
     </ul>
   </div>
   <div class="card">
     <div class="card-title">Quality Assurance Engineer / Product Management Officer</div>
     <div class="card-meta">RCTI+ (MNC Group)</div>
+  </div>
+</section>
+
+<section>
+  <h2>Research & Publications</h2>
+  <div class="card">
+    <div class="card-title">Comparative Analysis of CNN, LSTM, and CNN–LSTM for Indonesian Stock Prediction</div>
+    <div class="card-meta">EMACS Journal · 2025 · 4 citations</div>
+    <div class="card" style="margin-top:.75rem;background:var(--muted)">
+      <p style="font-size:.875rem;color:var(--muted-fg)">Best-known work. Comparative analysis of deep learning models on IDX30 constituents. LSTM achieved lowest RMSE (0.0222) and highest R² (0.889).</p>
+    </div>
+    <div><span class="tag">Deep Learning</span><span class="tag">Stock Prediction</span><span class="tag">CNN</span><span class="tag">LSTM</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Hybrid Ensemble Model for Stock Price Forecasting</div>
+    <div class="card-meta">2026 · LSTM + Random Forest + ARIMA + Linear Regression</div>
+    <p style="font-size:.875rem;color:var(--muted-fg);margin-top:.5rem">Ensemble approach achieving R² up to 0.96 on AAPL, TSLA, XOM, GS, JPM.</p>
+    <div><span class="tag">Ensemble Learning</span><span class="tag">Time Series</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Easy Data Augmentation for Handling Imbalanced Data in Fake News Detection</div>
+    <div class="card-meta">IEEE · 2023</div>
+    <div><span class="tag">NLP</span><span class="tag">Fake News</span><span class="tag">Data Augmentation</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">SMOTE-ENN: A Hybrid-Sampling Approach for Handling Imbalanced N-Linked Glycosylation Data</div>
+    <div class="card-meta">ICICEL · 2025</div>
+    <div><span class="tag">Bioinformatics</span><span class="tag">SMOTE-ENN</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Strengthening Ransomware Classification: The Role of SMOTE-ENN in ML Classifiers</div>
+    <div class="card-meta">ISRITI · 2024</div>
+    <div><span class="tag">Malware Detection</span><span class="tag">Classification</span></div>
+  </div>
+  <p style="color:var(--muted-fg);font-size:.875rem;margin-top:1rem">Research areas: Stock Market Forecasting · Malware Detection · Domain Adaptation · Few-Shot Learning · Spam & Phishing Detection</p>
+</section>
+
+<section>
+  <h2>Teaching</h2>
+  <div class="teaching-grid">
+    <div class="teaching-item"><div class="course">Fundamental of AI</div></div>
+    <div class="teaching-item"><div class="course">Software Engineering</div></div>
+    <div class="teaching-item"><div class="course">UI/UX Design</div></div>
+    <div class="teaching-item"><div class="course">Algorithm & Programming</div><div class="lang">C</div></div>
+    <div class="teaching-item"><div class="course">Introduction to Programming</div><div class="lang">Java</div></div>
+    <div class="teaching-item"><div class="course">Business App Development</div><div class="lang">Java OOP + JavaFX</div></div>
+    <div class="teaching-item"><div class="course">Code Reengineering</div></div>
+    <div class="teaching-item"><div class="course">Network Security Fundamental</div></div>
+    <div class="teaching-item"><div class="course">Research Methodology</div></div>
+    <div class="teaching-item"><div class="course">Compilation Techniques</div></div>
   </div>
 </section>
 
@@ -123,23 +222,56 @@ footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);col
 </section>
 
 <section>
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <span class="skill">AI / ML</span>
-    <span class="skill">Product Management</span>
-    <span class="skill">iOS (Swift)</span>
-    <span class="skill">UI/UX Design</span>
-    <span class="skill">Research</span>
-    <span class="skill">Agile / Scrum</span>
+  <h2>Apple Developer Academy Projects</h2>
+  <div class="project-link" style="border-left:3px solid var(--gold)">
+    <div class="project-info">
+      <div class="project-name">Joey: Self-Care Buddy</div>
+      <div class="project-desc">AR-powered emotion detection using facial expressions. Helps users manage negative thoughts with Thoughts Record & Mindfulness Activities. Released on App Store.</div>
+      <div class="project-tags"><span class="project-tag">Swift</span><span class="project-tag">ARKit</span><span class="project-tag">Core ML</span><span class="project-tag">App Store</span></div>
+    </div>
+    <span class="arrow">→</span>
+  </div>
+  <div class="project-link">
+    <div class="project-info">
+      <div class="project-name">Bartani</div>
+      <div class="project-desc">UI/UX Designer & Researcher</div>
+      <div class="project-tags"><span class="project-tag">Swift</span><span class="project-tag">UI/UX</span></div>
+    </div>
+    <span class="arrow">→</span>
+  </div>
+  <div class="project-link">
+    <div class="project-info">
+      <div class="project-name">BengCall</div>
+      <div class="project-desc">iOS Developer & Researcher</div>
+      <div class="project-tags"><span class="project-tag">Swift</span></div>
+    </div>
+    <span class="arrow">→</span>
+  </div>
+  <div class="project-link">
+    <div class="project-info">
+      <div class="project-name">ReflectMe</div>
+      <div class="project-desc">iOS Developer & Researcher</div>
+      <div class="project-tags"><span class="project-tag">Swift</span></div>
+    </div>
+    <span class="arrow">→</span>
+  </div>
+  <div class="project-link">
+    <div class="project-info">
+      <div class="project-name">Lunox</div>
+      <div class="project-desc">Interactive solar system exploration app. Nano Challenge 3 project.</div>
+      <div class="project-tags"><span class="project-tag">Swift</span><span class="project-tag">3D</span></div>
+    </div>
+    <span class="arrow">→</span>
   </div>
 </section>
 
 <section>
-  <h2>Projects</h2>
+  <h2>Other Projects</h2>
   <a href="https://github.com/setiawanjoddy/My-Weather" class="project-link" target="_blank" rel="noopener">
     <div class="project-info">
       <div class="project-name">My-Weather</div>
       <div class="project-desc">iOS weather app using OpenWeather API</div>
+      <div class="project-tags"><span class="project-tag">Swift</span><span class="project-tag">REST API</span></div>
     </div>
     <span class="arrow">→</span>
   </a>
@@ -147,6 +279,7 @@ footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);col
     <div class="project-info">
       <div class="project-name">iTourism</div>
       <div class="project-desc">Dicoding iOS course final project</div>
+      <div class="project-tags"><span class="project-tag">Swift</span></div>
     </div>
     <span class="arrow">→</span>
   </a>
@@ -154,6 +287,7 @@ footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);col
     <div class="project-info">
       <div class="project-name">CovID</div>
       <div class="project-desc">COVID-19 tracker using kawalcorona API</div>
+      <div class="project-tags"><span class="project-tag">Swift</span><span class="project-tag">REST API</span></div>
     </div>
     <span class="arrow">→</span>
   </a>
@@ -161,9 +295,34 @@ footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--border);col
     <div class="project-info">
       <div class="project-name">BMI-Calculator</div>
       <div class="project-desc">First Swift project at Apple Developer Academy</div>
+      <div class="project-tags"><span class="project-tag">Swift</span></div>
     </div>
     <span class="arrow">→</span>
   </a>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <span class="skill">AI / ML</span>
+    <span class="skill">Deep Learning</span>
+    <span class="skill">Product Management</span>
+    <span class="skill">iOS (Swift)</span>
+    <span class="skill">ARKit / Core ML</span>
+    <span class="skill">UI/UX Design</span>
+    <span class="skill">Research</span>
+    <span class="skill">Agile / Scrum</span>
+    <span class="skill">Python</span>
+    <span class="skill">Java</span>
+  </div>
+</section>
+
+<section>
+  <h2>What People Say</h2>
+  <div class="testimonial">
+    <blockquote>"He's very humble but courageous at the same time, always open to new ideas, and has a very good sense of leadership. He's also part of the iOS engineering team and he's a very quick learner and able to solve complicated coding problems."</blockquote>
+    <cite>— Colleague at Apple Developer Academy @BINUS</cite>
+  </div>
 </section>
 
 <footer>
