@@ -1,0 +1,31 @@
+---
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/experience", label: "Experience" },
+  { href: "/publications", label: "Publications" },
+  { href: "/projects", label: "Projects" },
+];
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Setiawan Joddy, home">SJ</a>
+    <nav aria-label="Primary navigation">
+      {
+        links.map(({ href, label }) => (
+          <a href={href} aria-current={currentPath.startsWith(href) ? "page" : undefined}>
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+    <a href="/contact" class="nav-cta" aria-current={currentPath === "/contact" ? "page" : undefined}
+      >Contact <span aria-hidden="true">↗</span></a
+    >
+  </div>
+</header>

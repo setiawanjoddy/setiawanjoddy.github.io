@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { publications } from "../data/publications";
+---
+
+<BaseLayout
+  title="Publications | Setiawan Joddy"
+  description="Selected applied AI publications by Setiawan Joddy."
+>
+  <section class="page-shell page-intro">
+    <p class="eyebrow">Publications / Applied AI</p>
+    <h1>Research built for real-world messiness.</h1>
+    <p class="intro-copy">
+      My work focuses on models that have to perform beyond a clean benchmark: imbalanced data,
+      local language, changing environments, and consequential decisions.
+    </p>
+  </section>
+
+  <section class="page-shell research-themes" aria-labelledby="themes-heading">
+    <p class="index" id="themes-heading">Research themes</p>
+    <p>Machine learning · Deep learning · NLP · Bioinformatics</p>
+  </section>
+
+  <section class="page-shell publication-section" aria-labelledby="selected-publications">
+    <div class="section-heading">
+      <p class="index">Selected bibliography</p>
+      <h2 id="selected-publications">Recent publications</h2>
+    </div>
+    <ol class="publication-list">
+      {
+        publications.map((publication) => (
+          <li>
+            <p class="publication-year">{publication.year}</p>
+            <div>
+              <h3>{publication.title}</h3>
+              <p>{publication.venue}</p>
+              <small>{publication.theme}</small>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+    <a
+      class="button"
+      href="https://scholar.google.com/citations?user=PbCs3nkAAAAJ&hl=en"
+      target="_blank"
+      rel="noreferrer"
+    >View complete profile on Google Scholar</a>
+  </section>
+</BaseLayout>

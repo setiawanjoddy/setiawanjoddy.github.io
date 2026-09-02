@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://setiawanjoddy.github.io/sitemap.xml

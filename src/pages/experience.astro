@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const roles = [
+  {
+    period: "2024 — Now",
+    role: "Internationalization & Partnership Officer",
+    organization: "BINUS University",
+    detail: "Building connections between academic programs, international partners, and opportunities for students and faculty.",
+  },
+  {
+    period: "Now",
+    role: "Assistant Professor",
+    organization: "School of Computer Science, BINUS University",
+    detail: "Teaching and researching applied AI, software engineering, and the relationship between technology and product decisions.",
+  },
+  {
+    period: "Product",
+    role: "Associate Product Manager",
+    organization: "EdenFarm",
+    detail: "Worked within agritech, translating operational context and user needs into product direction.",
+  },
+  {
+    period: "2020",
+    role: "Product Manager & iOS Developer",
+    organization: "Apple Developer Academy @BINUS",
+    detail: "Practised discovery, rapid validation, and cross-functional delivery through challenge-based product development.",
+  },
+  {
+    period: "Earlier",
+    role: "QA Engineer / Product Management Officer",
+    organization: "RCTI+ · MNC Group",
+    detail: "Started at the intersection of product quality, delivery, and coordination in a consumer media product.",
+  },
+];
+---
+
+<BaseLayout
+  title="Experience | Setiawan Joddy"
+  description="Setiawan Joddy's experience across product management, applied AI, partnerships, and education."
+>
+  <section class="page-shell page-intro">
+    <p class="eyebrow">Experience / Selected roles</p>
+    <h1>Products, research, and classrooms.</h1>
+    <p class="intro-copy">
+      A career shaped by moving between disciplines and making each one useful to the others.
+    </p>
+  </section>
+
+  <section class="page-shell timeline" aria-label="Professional experience">
+    {
+      roles.map((item, index) => (
+        <article class="timeline-item">
+          <p class="index">0{index + 1} / {item.period}</p>
+          <div>
+            <h2>{item.role}</h2>
+            <p class="organization">{item.organization}</p>
+            <p>{item.detail}</p>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="page-shell closing-callout">
+    <p class="index">What comes next</p>
+    <h2>I’m looking for product work where technical depth improves the decision, not the jargon.</h2>
+    <a class="button" href="/contact">Discuss a role or collaboration</a>
+  </section>
+</BaseLayout>
