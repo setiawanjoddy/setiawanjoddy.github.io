@@ -10,14 +10,6 @@ test("home introduces Setiawan as an AI researcher and product leader", () => {
   assert.match(home, /href="\/contact"[^>]*>Start a conversation<\/a>/);
 });
 
-test("home presents an accessible, optimized portrait of Setiawan", () => {
-  const portrait = home.match(/<img[^>]*class="hero-portrait-image"[^>]*>/)?.[0];
-
-  assert.ok(portrait);
-  assert.match(portrait, /alt="Portrait of Setiawan Joddy"/);
-  assert.match(portrait, /src="\/_astro\/profile-setiawanjoddy\.[^"]+\.webp"/);
-});
-
 test("home links to every primary portfolio section", () => {
   assert.match(home, /aria-label="Primary navigation"/);
   assert.match(home, /href="\/about"[^>]*>About<\/a>/);

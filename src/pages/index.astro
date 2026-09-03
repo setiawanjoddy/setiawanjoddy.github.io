@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import portrait from "../assets/profile-setiawanjoddy.jpeg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -12,19 +10,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="eyebrow">AI educator · researcher · product leader</p>
     <div class="hero-grid">
       <h1>I turn AI research into products people can use.</h1>
-      <figure class="hero-portrait">
-        <Image
-          src={portrait}
-          alt="Portrait of Setiawan Joddy"
-          class="hero-portrait-image"
-          widths={[320, 480, 640, 800]}
-          sizes="(max-width: 48rem) calc(100vw - 2.5rem), 28vw"
-          format="webp"
-          quality={80}
-          loading="eager"
-          fetchpriority="high"
-        />
-      </figure>
       <div class="hero-summary">
         <p>
           I connect rigorous research, product thinking, and education to move useful ideas from
