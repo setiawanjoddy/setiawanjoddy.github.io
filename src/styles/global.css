@@ -230,13 +230,14 @@ a:hover {
 
 .hero-portrait {
   grid-column: 9 / -1;
+  width: clamp(7rem, 11vw, 10rem);
   margin: 0;
 }
 
 .hero-portrait-image {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
   object-fit: cover;
 }
 
@@ -788,7 +789,7 @@ a:hover {
   }
 
   .hero-portrait {
-    width: min(100%, 30rem);
+    width: 8rem;
   }
 
   .hero-summary {
