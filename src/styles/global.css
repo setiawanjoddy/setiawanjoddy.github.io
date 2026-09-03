@@ -754,6 +754,10 @@ a:hover {
     padding-block: 4rem 3rem;
   }
 
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
   .hero .eyebrow {
     margin-bottom: 3rem;
   }
