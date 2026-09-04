@@ -13,10 +13,6 @@
   --gutter: clamp(1.25rem, 4vw, 3.5rem);
 }
 
-@view-transition {
-  navigation: auto;
-}
-
 *,
 *::before,
 *::after {
@@ -863,9 +859,7 @@ a:hover {
   .footer-grid nav {
     flex-wrap: wrap;
   }
-}
 
-@media (max-width: 48rem) {
   .header-inner {
     grid-template-columns: auto 1fr;
     gap: 1rem;

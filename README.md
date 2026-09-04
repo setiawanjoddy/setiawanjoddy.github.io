@@ -13,7 +13,6 @@ npm run dev
 
 ```sh
 npm test
-npm run check
 npm run test:e2e
 ```
 

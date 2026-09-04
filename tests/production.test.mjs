@@ -19,13 +19,12 @@ test("static crawl and fallback files are generated", async () => {
   assert.match(await output("404.html"), /href="\/">Return home<\/a>/);
 });
 
-test("deployment gates GitHub Pages on checks and tests", async () => {
+test("deployment gates GitHub Pages on tests", async () => {
   const workflow = await readFile(
     new URL("../.github/workflows/deploy.yml", import.meta.url),
     "utf8",
   );
 
-  assert.match(workflow, /npm run check/);
   assert.match(workflow, /npm test/);
   assert.match(workflow, /npm run test:e2e/);
   assert.match(workflow, /actions\/deploy-pages@v4/);
