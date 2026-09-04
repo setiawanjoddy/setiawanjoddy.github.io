@@ -11,7 +11,7 @@ const styles = stylesheetPath
 test("the shared layout provides keyboard and contact shortcuts", () => {
   assert.match(home, /class="skip-link" href="#main-content"/);
   assert.match(home, /href="\/contact"[^>]*class="nav-cta"/);
-  assert.match(home, /<footer[^>]*>.*Setiawan Joddy.*<\/footer>/);
+  assert.match(home, /<footer[\s\S]*Setiawan[\s\S]*Joddy[\s\S]*<\/footer>/);
 });
 
 test("global styles protect focus, mobile layout, and reduced motion", () => {

@@ -6,52 +6,56 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="Contact | Setiawan Joddy"
   description="Contact Setiawan Joddy about product gigs, wild collabs, and builder roles."
 >
-  <section class="page-shell page-intro">
-    <p class="eyebrow">Contact / Start here</p>
-    <h1>Let’s make something loud.</h1>
-    <p class="intro-copy">
-      I’m open to wild collabs, product gigs, and full-time roles where builders are trusted.
-      Bring a problem — I’ll bring the prototype.
-    </p>
+  <section class="page-head">
+    <div class="page-shell">
+      <p class="eyebrow">Contact / Start here</p>
+      <h1>Let’s make <span class="hl">something loud.</span></h1>
+      <p class="intro-copy">
+        I’m open to wild collabs, product gigs, and full-time roles where builders are trusted.
+        Bring a problem — <strong>I’ll bring the prototype.</strong>
+      </p>
+    </div>
   </section>
 
-  <section class="page-shell contact-grid">
-    <div>
-      <p class="index">Best first step</p>
-      <h2>Send a short, spicy note.</h2>
-      <p>Tell me what you are building and why it needs a builder, not another meeting.</p>
+  <section class="page-shell body-section">
+    <div class="contact-grid">
+      <div class="contact-box">
+        <p class="index">Best first step</p>
+        <h2>Send a short, spicy note.</h2>
+        <p>Tell me what you are building and why it needs a builder, not another meeting.</p>
+        <a
+          class="button"
+          href="https://linkedin.com/in/setiawanjoddy"
+          target="_blank"
+          rel="noreferrer"
+        >Say hi on LinkedIn</a>
+      </div>
+
+      <div class="contact-box contact-reasons">
+        <p class="index">Good reasons to reach out</p>
+        <ul>
+          <li>Build or supercharge an AI product</li>
+          <li>Cook up a wild collaboration</li>
+          <li>Hire a builder for your team</li>
+          <li>Just say hi — snacks optional</li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="profile-links" aria-label="External profiles">
+      <a href="https://linkedin.com/in/setiawanjoddy" target="_blank" rel="noreferrer">
+        <span>Professional profile</span><strong>LinkedIn</strong>
+      </a>
+      <a href="https://github.com/setiawanjoddy" target="_blank" rel="noreferrer">
+        <span>Code and experiments</span><strong>GitHub</strong>
+      </a>
       <a
-        class="button"
-        href="https://linkedin.com/in/setiawanjoddy"
+        href="https://scholar.google.com/citations?user=PbCs3nkAAAAJ&hl=en"
         target="_blank"
         rel="noreferrer"
-      >Say hi on LinkedIn</a>
-    </div>
-
-    <div class="contact-reasons">
-      <p class="index">Good reasons to reach out</p>
-      <ul>
-        <li>Build or supercharge an AI product</li>
-        <li>Cook up a wild collaboration</li>
-        <li>Hire a builder for your team</li>
-        <li>Just say hi — snacks optional</li>
-      </ul>
-    </div>
+      >
+        <span>Research record</span><strong>Google Scholar</strong>
+      </a>
+    </nav>
   </section>
-
-  <nav class="page-shell profile-links" aria-label="External profiles">
-    <a href="https://linkedin.com/in/setiawanjoddy" target="_blank" rel="noreferrer">
-      <span>Professional profile</span><strong>LinkedIn</strong>
-    </a>
-    <a href="https://github.com/setiawanjoddy" target="_blank" rel="noreferrer">
-      <span>Code and experiments</span><strong>GitHub</strong>
-    </a>
-    <a
-      href="https://scholar.google.com/citations?user=PbCs3nkAAAAJ&hl=en"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <span>Research record</span><strong>Google Scholar</strong>
-    </a>
-  </nav>
 </BaseLayout>

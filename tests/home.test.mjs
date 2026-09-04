@@ -6,7 +6,8 @@ const home = await readFile(new URL("../dist/index.html", import.meta.url), "utf
 
 test("home introduces Setiawan as an AI builder and product maker", () => {
   assert.match(home, /<title>Setiawan Joddy \| AI Builder &amp; Product Maker<\/title>/);
-  assert.match(home, /<h1[^>]*>I build AI stuff people actually use\.<\/h1>/);
+  assert.match(home, /<span class="row">I build<\/span>/);
+  assert.match(home, /people use\.<\/span>/);
   assert.match(home, /href="\/contact"[^>]*>Start a project<\/a>/);
   assert.match(home, /class="sticker"/);
 });
@@ -14,9 +15,9 @@ test("home introduces Setiawan as an AI builder and product maker", () => {
 test("home links to every primary portfolio section", () => {
   assert.match(home, /aria-label="Primary navigation"/);
   assert.match(home, /href="\/about"[^>]*>About<\/a>/);
-  assert.match(home, /href="\/experience"[^>]*>Experience<\/a>/);
-  assert.match(home, /href="\/publications"[^>]*>Publications<\/a>/);
-  assert.match(home, /href="\/projects"[^>]*>Projects<\/a>/);
+  assert.match(home, /href="\/experience"[^>]*>Gigs<\/a>/);
+  assert.match(home, /href="\/publications"[^>]*>Lab<\/a>/);
+  assert.match(home, /href="\/projects"[^>]*>Work<\/a>/);
 });
 
 test("home backs the positioning with selected work", () => {

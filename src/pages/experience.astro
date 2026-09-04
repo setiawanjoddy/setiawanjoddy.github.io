@@ -39,32 +39,41 @@ const roles = [
   title="Experience | Setiawan Joddy"
   description="Setiawan Joddy's gigs across product, AI builds, and creative chaos."
 >
-  <section class="page-shell page-intro">
-    <p class="eyebrow">Experience / Gigs &amp; adventures</p>
-    <h1>Gigs &amp; joyrides.</h1>
-    <p class="intro-copy">
-      A career built by jumping between worlds and stealing the best tricks from each.
-    </p>
+  <section class="page-head">
+    <div class="page-shell">
+      <p class="eyebrow">Experience / Gigs &amp; adventures</p>
+      <h1>Gigs &amp; joyrides.</h1>
+      <p class="intro-copy">
+        A career built by <strong>jumping between worlds</strong> and stealing the best tricks from
+        each.
+      </p>
+    </div>
   </section>
 
-  <section class="page-shell timeline" aria-label="Professional experience">
-    {
-      roles.map((item, index) => (
-        <article class="timeline-item">
-          <p class="index">0{index + 1} / {item.period}</p>
-          <div>
-            <h2>{item.role}</h2>
-            <p class="organization">{item.organization}</p>
-            <p>{item.detail}</p>
-          </div>
-        </article>
-      ))
-    }
+  <section class="page-shell body-section">
+    <ol class="timeline" aria-label="Professional experience">
+      {
+        roles.map((item, index) => (
+          <li class="timeline-item">
+            <p class="index">
+              0{index + 1} / {item.period}
+            </p>
+            <div>
+              <h2>{item.role}</h2>
+              <p class="organization">{item.organization}</p>
+              <p>{item.detail}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
   </section>
 
-  <section class="page-shell closing-callout">
-    <p class="index">What comes next</p>
-    <h2>I want gigs where the tech is deep and the meetings are short.</h2>
-    <a class="button" href="/contact">Pitch me something fun</a>
+  <section class="page-shell body-section">
+    <div class="closing-callout">
+      <p class="index">What comes next</p>
+      <h2>I want gigs where the tech is deep and the meetings are short.</h2>
+      <a class="button" href="/contact">Pitch me something fun</a>
+    </div>
   </section>
 </BaseLayout>

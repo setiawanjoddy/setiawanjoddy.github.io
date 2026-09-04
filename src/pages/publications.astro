@@ -7,22 +7,29 @@ import { publications } from "../data/publications";
   title="Lab Notes | Setiawan Joddy"
   description="Experiments and research drops by Setiawan Joddy, with receipts."
 >
-  <section class="page-shell page-intro">
-    <p class="eyebrow">Lab notes / Experiments with receipts</p>
-    <h1>Messy tests, real receipts.</h1>
-    <p class="intro-copy">
-      I tinker in public. These are the write-ups: messy data, local languages, and models that
-      had to survive the real world.
-    </p>
+  <section class="page-head">
+    <div class="page-shell">
+      <p class="eyebrow">Lab notes / Experiments with receipts</p>
+      <h1>Messy tests, <span class="hl">real receipts.</span></h1>
+      <p class="intro-copy">
+        I tinker in public. These are the write-ups: <strong>messy data</strong>, local languages,
+        and models that had to survive the real world.
+      </p>
+    </div>
   </section>
 
-  <section class="page-shell research-themes" aria-labelledby="themes-heading">
-    <p class="index" id="themes-heading">Research themes</p>
-    <p>Machine learning · Deep learning · NLP · Bioinformatics</p>
+  <section class="page-shell body-section" aria-labelledby="themes-heading">
+    <p class="index" id="themes-heading">Flavours</p>
+    <ul class="tagrow">
+      <li>Machine learning</li>
+      <li>Deep learning</li>
+      <li>NLP</li>
+      <li>Bioinformatics</li>
+    </ul>
   </section>
 
-  <section class="page-shell publication-section" aria-labelledby="selected-publications">
-    <div class="section-heading">
+  <section class="page-shell body-section" aria-labelledby="selected-publications">
+    <div class="section-head">
       <p class="index">Greatest hits</p>
       <h2 id="selected-publications">Recent drops</h2>
     </div>
@@ -40,11 +47,13 @@ import { publications } from "../data/publications";
         ))
       }
     </ol>
-    <a
-      class="button"
-      href="https://scholar.google.com/citations?user=PbCs3nkAAAAJ&hl=en"
-      target="_blank"
-      rel="noreferrer"
-    >View complete profile on Google Scholar</a>
+    <p class="section-foot">
+      <a
+        class="button"
+        href="https://scholar.google.com/citations?user=PbCs3nkAAAAJ&hl=en"
+        target="_blank"
+        rel="noreferrer"
+      >Full archive on Scholar</a>
+    </p>
   </section>
 </BaseLayout>

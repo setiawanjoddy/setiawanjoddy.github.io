@@ -6,14 +6,14 @@ interface Props {
 const { currentPath } = Astro.props;
 const links = [
   { href: "/about", label: "About" },
-  { href: "/experience", label: "Experience" },
-  { href: "/publications", label: "Publications" },
-  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Gigs" },
+  { href: "/publications", label: "Lab" },
+  { href: "/projects", label: "Work" },
 ];
 ---
 
 <header class="site-header">
-  <div class="header-inner">
+  <div class="header-inner page-shell">
     <a class="brand" href="/" aria-label="Setiawan Joddy, home">SJ</a>
     <nav aria-label="Primary navigation">
       {
@@ -25,7 +25,7 @@ const links = [
       }
     </nav>
     <a href="/contact" class="nav-cta" aria-current={currentPath === "/contact" ? "page" : undefined}
-      >Contact <span aria-hidden="true">↗</span></a
+      >Hire me</a
     >
   </div>
 </header>

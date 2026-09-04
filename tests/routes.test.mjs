@@ -16,7 +16,10 @@ test("each primary route has a distinct page heading", async () => {
 
   for (const [route, heading] of Object.entries(routes)) {
     const html = await page(route);
-    assert.match(html, new RegExp(`<h1[^>]*>${heading}<\\/h1>`));
+    const text = html
+      .match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1]
+      .replace(/<[^>]+>/g, "");
+    assert.equal(text, heading);
     assert.match(html, new RegExp(`<link rel="canonical" href="https://setiawanjoddy.github.io/${route}/">`));
   }
 });
@@ -43,7 +46,9 @@ test("publications presents verified research themes and work", async () => {
 
   assert.match(html, /Easy Data Augmentation for Handling Imbalanced Data in Fake News Detection/);
   assert.match(html, /Comparative Analysis of CNN, LSTM, and CNN–LSTM for Indonesian Stock Prediction/);
-  assert.match(html, /Machine learning · Deep learning · NLP · Bioinformatics/);
+  for (const theme of ["Machine learning", "Deep learning", "NLP", "Bioinformatics"]) {
+    assert.match(html, new RegExp(`<li>${theme}<\\/li>`));
+  }
 });
 
 test("about connects Setiawan's product and research background", async () => {

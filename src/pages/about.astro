@@ -6,18 +6,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="About | Setiawan Joddy"
   description="The story behind Setiawan Joddy, AI builder and product maker."
 >
-  <section class="page-shell page-intro">
-    <p class="eyebrow">About / The human</p>
-    <h1>Tinkerer. Shipper. Loud.</h1>
-    <p class="intro-copy">
-      Between wild ideas and working software. Between lab coats and launch days. Between “what
-      if” and “it’s live”.
-    </p>
+  <section class="page-head">
+    <div class="page-shell">
+      <p class="eyebrow">About / The human</p>
+      <h1>Tinkerer. Shipper. <span class="hl">Loud.</span></h1>
+      <p class="intro-copy">
+        Between wild ideas and working software. Between lab coats and launch days. Between
+        <strong>“what if”</strong> and <strong>“it’s live”</strong>.
+      </p>
+    </div>
   </section>
 
-  <section class="page-shell narrative-grid">
+  <section class="page-shell body-section">
     <p class="index">The short version</p>
-    <div class="prose">
+    <div class="prose-big">
       <p>
         I used to wear the academic hats — lecturer, researcher, partnership wrangler. These days
         I spend that energy building: AI products, scrappy prototypes, and teams that ship.
@@ -33,11 +35,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="page-shell section-grid education-section">
-    <div class="section-heading">
-      <p class="index">01 / Receipts</p>
-      <h2>Education</h2>
-    </div>
+  <section class="page-shell body-section">
+    <p class="index">01 / Receipts</p>
     <div class="credential-list">
       <article>
         <p>BINUS University</p>
@@ -56,10 +55,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <small>Cross-functional product practice through challenge-based learning</small>
       </article>
     </div>
-  </section>
-
-  <section class="page-shell principles">
-    <p class="index">02 / House rules</p>
-    <h2>Ship fast. Learn faster. Ban boring.</h2>
+    <div class="principles-band">
+      <p class="index">02 / House rules</p>
+      <h2>Ship fast. Learn faster. <span class="hl">Ban boring.</span></h2>
+    </div>
   </section>
 </BaseLayout>
