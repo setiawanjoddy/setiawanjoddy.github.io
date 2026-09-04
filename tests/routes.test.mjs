@@ -7,9 +7,9 @@ const page = (route) =>
 
 test("each primary route has a distinct page heading", async () => {
   const routes = {
-    about: "Professional tinkerer, serial shipper.",
-    experience: "Jobs, gigs & adventures.",
-    publications: "Experiments with receipts.",
+    about: "Tinkerer. Shipper. Loud.",
+    experience: "Gigs &amp; joyrides.",
+    publications: "Messy tests, real receipts.",
     projects: "Things I shipped.",
     contact: "Let’s make something loud.",
   };

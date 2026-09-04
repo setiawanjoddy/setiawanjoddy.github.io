@@ -821,7 +821,16 @@ a:hover {
   }
 
   .hero h1 {
-    font-size: clamp(3.7rem, 18vw, 5.2rem);
+    font-size: clamp(2.9rem, 15vw, 5.2rem);
+  }
+
+  .page-intro h1 {
+    font-size: clamp(2.9rem, 15vw, 5.2rem);
+  }
+
+  .hero h1,
+  .page-intro h1 {
+    overflow-wrap: break-word;
   }
 
   .hero-summary {
