@@ -2,10 +2,11 @@
   --paper: #f2f0e8;
   --paper-deep: #e5e4da;
   --ink: #111512;
-  --muted: #566059;
-  --line: #bec5bd;
-  --blue: #1647ff;
-  --acid: #d9ff57;
+  --muted: #475569;
+  --line: #d4d9e3;
+  --blue: #2563eb;
+  --blue-deep: #1e40af;
+  --blue-tint: #dce6fd;
   --white: #fffef8;
   --sans: "IBM Plex Sans", system-ui, sans-serif;
   --serif: "Newsreader", Georgia, serif;
@@ -58,8 +59,8 @@ a:hover {
   top: 0.75rem;
   left: 0.75rem;
   padding: 0.65rem 1rem;
-  background: var(--acid);
-  color: var(--ink);
+  background: var(--blue);
+  color: var(--white);
   transform: translateY(-200%);
 }
 
@@ -95,7 +96,8 @@ a:hover {
   width: 2.5rem;
   height: 2.5rem;
   place-items: center;
-  background: var(--acid);
+  background: var(--blue);
+  color: var(--white);
   font-weight: 600;
   text-decoration: none;
 }
@@ -163,7 +165,7 @@ a:hover {
 }
 
 .button:hover {
-  background: var(--ink);
+  background: var(--blue-deep);
   color: var(--white);
 }
 
@@ -242,7 +244,7 @@ a:hover {
 }
 
 .proof-strip {
-  background: var(--ink);
+  background: var(--blue-deep);
   color: var(--white);
 }
 
@@ -256,7 +258,7 @@ a:hover {
   gap: 0.15rem;
   margin: 0;
   padding: 1.6rem 2rem;
-  border-right: 1px solid #384039;
+  border-right: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .proof-grid p:first-child {
@@ -272,7 +274,7 @@ a:hover {
 }
 
 .proof-grid span {
-  color: #aeb8b0;
+  color: #c9d6f2;
   font-size: 0.76rem;
 }
 
@@ -350,7 +352,7 @@ a:hover {
 
 .work-item:hover {
   padding-inline: 1rem;
-  background: var(--acid);
+  background: var(--blue-tint);
   color: var(--ink);
 }
 
@@ -370,12 +372,22 @@ a:hover {
 
 .closing-callout {
   padding: clamp(3rem, 7vw, 6rem);
-  background: var(--acid);
+  background: var(--blue-deep);
+  color: var(--white);
+}
+
+.closing-callout .index {
+  color: #c9d6f2;
 }
 
 .closing-callout h2 {
   max-width: 18ch;
   margin-bottom: 2.5rem;
+}
+
+.closing-callout .button {
+  background: var(--white);
+  color: var(--blue-deep);
 }
 
 .narrative-grid {
@@ -788,7 +800,7 @@ a:hover {
   .proof-grid p:first-child {
     padding: 1.2rem 0;
     border-right: 0;
-    border-bottom: 1px solid #384039;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
   }
 
   .proof-grid p:last-child {
