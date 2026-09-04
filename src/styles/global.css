@@ -1,15 +1,18 @@
 :root {
-  --paper: #f2f0e8;
-  --paper-deep: #e5e4da;
-  --ink: #111512;
+  --paper: #fdf2f8;
+  --paper-deep: #fbe0ee;
+  --ink: #1b1220;
   --muted: #475569;
-  --line: #d4d9e3;
+  --line: #1b1220;
   --blue: #2563eb;
-  --blue-deep: #1e40af;
-  --blue-tint: #dce6fd;
+  --pink: #ec4899;
+  --pink-tint: #fce7f3;
+  --cyan: #0891b2;
+  --yellow: #facc15;
+  --shadow-pop: 5px 5px 0 var(--ink);
   --white: #fffef8;
-  --sans: "IBM Plex Sans", system-ui, sans-serif;
-  --serif: "Newsreader", Georgia, serif;
+  --sans: "Archivo", system-ui, sans-serif;
+  --serif: "Space Grotesk", system-ui, sans-serif;
   --page: 76rem;
   --gutter: clamp(1.25rem, 4vw, 3.5rem);
 }
@@ -38,6 +41,11 @@ main:focus {
   outline: none;
 }
 
+::selection {
+  background: var(--cyan);
+  color: var(--white);
+}
+
 a {
   color: inherit;
   text-decoration-thickness: 0.08em;
@@ -49,7 +57,7 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 0.18rem solid var(--blue);
+  outline: 0.18rem solid var(--pink);
   outline-offset: 0.25rem;
 }
 
@@ -59,8 +67,8 @@ a:hover {
   top: 0.75rem;
   left: 0.75rem;
   padding: 0.65rem 1rem;
-  background: var(--blue);
-  color: var(--white);
+  background: var(--ink);
+  color: var(--yellow);
   transform: translateY(-200%);
 }
 
@@ -96,10 +104,12 @@ a:hover {
   width: 2.5rem;
   height: 2.5rem;
   place-items: center;
-  background: var(--blue);
-  color: var(--white);
-  font-weight: 600;
+  background: var(--ink);
+  color: var(--yellow);
+  font-weight: 800;
   text-decoration: none;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--pink);
 }
 
 .site-header nav {
@@ -121,7 +131,12 @@ a:hover {
 
 .nav-cta {
   padding: 0.6rem 0.85rem;
-  border: 1px solid var(--ink);
+  border: 2px solid var(--ink);
+}
+
+.nav-cta:hover {
+  background: var(--yellow);
+  color: var(--ink);
 }
 
 .site-footer {
@@ -158,15 +173,19 @@ a:hover {
   align-items: center;
   min-height: 3rem;
   padding: 0.7rem 1.1rem;
-  background: var(--blue);
+  background: var(--ink);
   color: var(--white);
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-pop);
 }
 
 .button:hover {
-  background: var(--blue-deep);
+  background: var(--ink);
   color: var(--white);
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--pink);
 }
 
 .text-link {
@@ -189,8 +208,8 @@ a:hover {
 .page-intro h1 {
   max-width: 14ch;
   margin: 1rem 0 1.5rem;
-  font: 400 clamp(3.5rem, 9vw, 7.5rem) / 0.91 var(--serif);
-  letter-spacing: -0.05em;
+  font: 700 clamp(3.5rem, 9vw, 7.5rem) / 0.91 var(--serif);
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
@@ -203,6 +222,23 @@ a:hover {
 .hero {
   min-height: calc(100svh - 4.75rem);
   padding-block: clamp(4rem, 10vw, 8rem) 3rem;
+  background-image: radial-gradient(#f5c6dd 1.3px, transparent 1.4px);
+  background-size: 24px 24px;
+}
+
+.sticker {
+  display: inline-block;
+  margin: 0 0 1.5rem;
+  padding: 0.45rem 0.9rem;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--pink);
+  transform: rotate(-2deg);
 }
 
 .hero .eyebrow {
@@ -220,8 +256,9 @@ a:hover {
   grid-column: 1 / 10;
   max-width: 11ch;
   margin: 0;
-  font: 300 clamp(4rem, 9.2vw, 8.7rem) / 0.85 var(--serif);
-  letter-spacing: -0.065em;
+  font: 800 clamp(4rem, 9.2vw, 8.7rem) / 0.85 var(--serif);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
   text-wrap: balance;
 }
 
@@ -244,8 +281,9 @@ a:hover {
 }
 
 .proof-strip {
-  background: var(--blue-deep);
+  background: var(--ink);
   color: var(--white);
+  border-block: 3px solid var(--ink);
 }
 
 .proof-grid {
@@ -258,7 +296,7 @@ a:hover {
   gap: 0.15rem;
   margin: 0;
   padding: 1.6rem 2rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.28);
+  border-right: 2px solid var(--pink);
 }
 
 .proof-grid p:first-child {
@@ -274,7 +312,7 @@ a:hover {
 }
 
 .proof-grid span {
-  color: #c9d6f2;
+  color: #f9a8d4;
   font-size: 0.76rem;
 }
 
@@ -352,7 +390,7 @@ a:hover {
 
 .work-item:hover {
   padding-inline: 1rem;
-  background: var(--blue-tint);
+  background: var(--pink-tint);
   color: var(--ink);
 }
 
@@ -372,12 +410,14 @@ a:hover {
 
 .closing-callout {
   padding: clamp(3rem, 7vw, 6rem);
-  background: var(--blue-deep);
-  color: var(--white);
+  background: var(--yellow);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
 }
 
 .closing-callout .index {
-  color: #c9d6f2;
+  color: var(--ink);
 }
 
 .closing-callout h2 {
@@ -386,8 +426,9 @@ a:hover {
 }
 
 .closing-callout .button {
-  background: var(--white);
-  color: var(--blue-deep);
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 5px 5px 0 var(--pink);
 }
 
 .narrative-grid {
@@ -549,7 +590,9 @@ a:hover {
   display: inline-block;
   margin-top: 0.65rem;
   padding: 0.2rem 0.45rem;
-  background: var(--paper-deep);
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  color: var(--ink);
 }
 
 .publication-section > .button {
@@ -576,7 +619,7 @@ a:hover {
 }
 
 .project-row:hover .project-copy strong {
-  color: var(--blue);
+  color: var(--pink);
 }
 
 .project-number,
@@ -627,8 +670,8 @@ a:hover {
 .case-header h1 {
   max-width: 12ch;
   margin: 0;
-  font: 400 clamp(3.5rem, 8vw, 7.5rem) / 0.9 var(--serif);
-  letter-spacing: -0.055em;
+  font: 700 clamp(3.5rem, 8vw, 7.5rem) / 0.9 var(--serif);
+  letter-spacing: -0.02em;
 }
 
 .case-label {
@@ -670,6 +713,8 @@ a:hover {
   padding: clamp(2rem, 5vw, 4rem);
   background: var(--ink);
   color: var(--white);
+  border: 3px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--pink);
 }
 
 .case-body aside p:last-child {
@@ -800,7 +845,7 @@ a:hover {
   .proof-grid p:first-child {
     padding: 1.2rem 0;
     border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    border-bottom: 2px solid var(--pink);
   }
 
   .proof-grid p:last-child {

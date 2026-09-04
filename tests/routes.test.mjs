@@ -7,11 +7,11 @@ const page = (route) =>
 
 test("each primary route has a distinct page heading", async () => {
   const routes = {
-    about: "The throughline is translation.",
-    experience: "Products, research, and classrooms.",
-    publications: "Research built for real-world messiness.",
-    projects: "Products shaped by evidence.",
-    contact: "Let’s work on something useful.",
+    about: "Professional tinkerer, serial shipper.",
+    experience: "Jobs, gigs & adventures.",
+    publications: "Experiments with receipts.",
+    projects: "Things I shipped.",
+    contact: "Let’s make something loud.",
   };
 
   for (const [route, heading] of Object.entries(routes)) {
@@ -67,7 +67,7 @@ test("experience includes academic and product roles", async () => {
 test("contact gives collaborators and recruiters direct next steps", async () => {
   const html = await page("contact");
 
-  assert.match(html, /Product Manager and AI Product Manager opportunities/);
+  assert.match(html, /where builders are trusted/);
   assert.match(html, /href="https:\/\/linkedin.com\/in\/setiawanjoddy"/);
   assert.match(html, /href="https:\/\/github.com\/setiawanjoddy"/);
   assert.match(html, /href="https:\/\/scholar.google.com\/citations\?user=PbCs3nkAAAAJ/);

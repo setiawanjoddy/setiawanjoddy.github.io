@@ -20,8 +20,8 @@ test("global styles protect focus, mobile layout, and reduced motion", () => {
   assert.match(styles, /width<=48rem/);
 });
 
-test("blue theme tokens drive the dominant brand surfaces", () => {
-  assert.match(styles, /--blue:#2563eb/i);
-  assert.match(styles, /--blue-deep:/);
-  assert.match(styles, /\.proof-strip\{[^}]*background:var\(--blue-deep\)/);
+test("pop-art theme tokens drive the loud surfaces", () => {
+  assert.match(styles, /--pink:#ec4899/i);
+  assert.match(styles, /--shadow-pop:/);
+  assert.match(styles, /\.sticker/);
 });
