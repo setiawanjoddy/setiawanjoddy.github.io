@@ -272,7 +272,7 @@ a {
   font: 900 clamp(3rem, 10vw, 8.5rem) / 0.92 var(--serif);
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .hero h1 .row {
@@ -370,7 +370,7 @@ a {
   max-width: 12ch;
   font: 900 clamp(2.4rem, 6vw, 4.5rem) / 0.95 var(--serif);
   text-transform: uppercase;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .playbook {
@@ -454,8 +454,14 @@ a {
   font-weight: 900;
 }
 
+.work-item > span:nth-child(2),
+.project-copy {
+  min-width: 0;
+}
+
 .work-item strong {
   display: block;
+  overflow-wrap: anywhere;
   font-size: clamp(1.4rem, 3vw, 2.2rem);
   font-weight: 900;
   text-transform: uppercase;
@@ -490,7 +496,7 @@ a {
   max-width: 16ch;
   font: 900 clamp(2.2rem, 6vw, 4.2rem) / 0.95 var(--serif);
   text-transform: uppercase;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .closing-callout {
@@ -510,7 +516,7 @@ a {
   max-width: 16ch;
   font: 900 clamp(2.2rem, 6vw, 4.2rem) / 0.95 var(--serif);
   text-transform: uppercase;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .closing-callout .button {
@@ -529,7 +535,7 @@ a {
   max-width: 12ch;
   font: 900 clamp(2.8rem, 9vw, 7rem) / 0.92 var(--serif);
   text-transform: uppercase;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .intro-copy {
@@ -599,6 +605,7 @@ a {
   font-weight: 900;
   text-transform: uppercase;
   line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 
 .organization {
@@ -675,7 +682,7 @@ a {
   max-width: 20ch;
   font: 900 clamp(1.8rem, 5vw, 3.4rem) / 1 var(--serif);
   text-transform: uppercase;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .principles-band .hl {
@@ -784,7 +791,7 @@ a {
   font-weight: 900;
   text-transform: uppercase;
   line-height: 0.95;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .project-copy > span:last-child {
@@ -812,7 +819,7 @@ a {
   max-width: 12ch;
   font: 900 clamp(2.8rem, 9vw, 6.5rem) / 0.92 var(--serif);
   text-transform: uppercase;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .case-label {
@@ -1077,7 +1084,11 @@ a {
 
   .work-item,
   .project-row {
-    grid-template-columns: 2.5rem 1fr;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+  }
+
+  .project-number {
+    font-size: 1.6rem;
   }
 
   .work-arrow {
