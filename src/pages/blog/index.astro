@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .map((post) => ({ ...post, slug: post.id.replace(/\.mdx?$/, "") }))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title="Blog | Setiawan Joddy"
+  description="Loud notes on building AI products, shipping fast, and learning in public."
+>
+  <section class="page-head">
+    <div class="page-shell">
+      <p class="eyebrow">Blog / Notes from the lab</p>
+      <h1>Loud notes.</h1>
+      <p class="intro-copy">
+        Short write-ups from the workbench. <strong>No think pieces</strong>, just receipts.
+      </p>
+    </div>
+  </section>
+
+  <section class="page-shell body-section">
+    <div class="project-index" aria-label="Blog posts">
+      {
+        posts.map((post, index) => (
+          <a class="project-row" href={`/blog/${post.slug}`}>
+            <span class="project-number">0{index + 1}</span>
+            <span class="project-copy">
+              <small>
+                {post.data.date.toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                })}
+              </small>
+              <strong>{post.data.title}</strong>
+              <span>{post.data.description}</span>
+            </span>
+            <span class="project-year">Read →</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

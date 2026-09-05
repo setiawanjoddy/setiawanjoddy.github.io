@@ -12,6 +12,7 @@ test("each primary route has a distinct page heading", async () => {
     publications: "Messy tests, real receipts.",
     projects: "Things I shipped.",
     contact: "Let’s make something loud.",
+    blog: "Loud notes.",
   };
 
   for (const [route, heading] of Object.entries(routes)) {
@@ -22,6 +23,22 @@ test("each primary route has a distinct page heading", async () => {
     assert.equal(text, heading);
     assert.match(html, new RegExp(`<link rel="canonical" href="https://setiawanjoddy.github.io/${route}/">`));
   }
+});
+
+test("blog lists posts and renders each post", async () => {
+  const index = await page("blog");
+
+  assert.match(index, /href="\/blog\/ship-loud-early"/);
+  assert.match(index, /href="\/blog\/why-i-build-in-public"/);
+
+  for (const slug of ["blog/ship-loud-early", "blog/why-i-build-in-public"]) {
+    const html = await page(slug);
+    assert.match(html, /<article[^>]*>/);
+    assert.match(html, /<a[^>]*href="\/blog"[^>]*>Back to notes<\/a>/);
+  }
+
+  const post = await page("blog/ship-loud-early");
+  assert.match(post, /<h1[^>]*>Ship loud, fix fast<\/h1>/);
 });
 
 test("projects links to three evidence-led case studies", async () => {

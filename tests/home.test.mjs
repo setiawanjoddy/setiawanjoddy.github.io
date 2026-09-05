@@ -18,6 +18,7 @@ test("home links to every primary portfolio section", () => {
   assert.match(home, /href="\/experience"[^>]*>Gigs<\/a>/);
   assert.match(home, /href="\/publications"[^>]*>Lab<\/a>/);
   assert.match(home, /href="\/projects"[^>]*>Work<\/a>/);
+  assert.match(home, /href="\/blog"[^>]*>Blog<\/a>/);
 });
 
 test("home backs the positioning with selected work", () => {

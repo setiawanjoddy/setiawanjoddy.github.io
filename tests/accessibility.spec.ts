@@ -17,6 +17,8 @@ for (const route of [
   "/publications",
   "/projects",
   "/projects/joey",
+  "/blog",
+  "/blog/ship-loud-early",
   "/contact",
 ]) {
   test(`${route} does not overflow a small mobile viewport`, async ({ page }) => {
